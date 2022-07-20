@@ -30,42 +30,50 @@
         <form action="" id ="formulario"  class="formulario">
           <fieldset>
             <legend>Nombre completo</legend>
-            <label for="" class="formularioLabel ">Nombre</label>
-            <small id="errorNombre" class="errorNombre" hidden>Introducir un Nombre correcto</small>
-            <input type="text" name="" id="nombre" onblur="verificarNombre(this)" class="formularioInput">
+            <label for="input-nombre" class="formularioLabel ">Nombre</label>
+            <input type="text" name="" id="input-nombre" class="input-nombre">        
+            <small id="error-nombre" class="error-nombre" hidden>Introducir un Nombre correcto</small>
+            <small id="valido-nombre" class="valido-nombre" hidden>Nombre correcto</small>
             
-            <label for="" class="formularioLabel ">Apellido</label>
-            <small id="errorApellido" class="errorApellido" hidden>Poner un Apellido correcto</small>
-            <input type="text" name="" id="apellido" onblur="verificarApellido(this)" class="formularioInput">
+            <label for="input-apellido" class="formularioLabel ">Apellido</label>            
+            <input type="text" id="input-apellido" class="input-apellido">            
+            <small id="error-apellido" class="error-apellido" hidden>Introducir un Apellido correcto</small>
+            <small id="valido-apellido" class="valido-apellido" hidden>Apellido correcto</small>
           </fieldset> 
-          <fieldset>
-            <legend>Correo:</legend>
-            <label for="" class="formularioLabel ">Email</label>
-            <small id="errorCorreo" class="errorCorreo" hidden>Introducir un Correo correcto</small>
-            <input type="text" name="" id="correo" onblur="verificarCorreo(this)" class="formularioInput">
-            
-            <label for="" class="formularioLabel ">Repetir Email</label>
-            <small id="errorCorreo" class="errorCorreo" hidden>Introducir un Correo correcto</small>
-            <input type="text" name="" id="correo" onblur="verificarCorreo(this)" class="formularioInput">
-            </fieldset>
-          <fieldset>
-            <legend>Contraseña</legend>
-            <label for="" class="formularioLabel ">Contraseña</label>
-            <small id="errorEdad" class="errorEdad" hidden>Introducir una Edad válida</small>
-            <input type="text" name="" class="formularioInput" onblur="verificarEdad(this)" id="edad">
 
-            <label for="" class="formularioLabel ">Repetir Contraseña</label>
-            <small id="errorEdad" class="errorEdad" hidden>Introducir una Edad válida</small>
-            <input type="text" name="" class="formularioInput" id="edad">
+          <fieldset>
+            <legend>Correo</legend>
+            <label for="input-correo">Email</label>
+            <input type="text" class="input-correo" id="input-correo">
+            <small id="error-correo" class="error-correo" hidden>Introducir un Correo correcto</small>
+            <small id="valido-correo" class="valido-correo" hidden>Correo correcto</small>
+            
+            <label for="input-repite-correo">Repetir email</label>
+            <input type="text" class="input-repite-correo" id="input-repite-correo">
+            <small id="error-repite-correo" class="error-repite-correo" hidden>Introducir un Correo correcto</small>
+            <small id="valido-repite-correo" class="valido-repite-correo" hidden>Correo correcto</small>
+            </fieldset>
+
+          <fieldset>
+            <legend>Password</legend>
+            <label for="input-contrasena">Contraseña</label>            
+            <input type="password" class="input-contrasena" id="input-contrasena">
+            <small id="error-contrasena" class="error-contrasena" hidden>Introducir una contraseña correcta</small>
+            <small id="valido-contrasena" class="valido-contrasena" hidden>contraseña válida</small>
+
+            <label for="input-repite-contrasena">Repetir Contraseña</label>            
+            <input type="password" class="input-repite-contrasena" id="input-repite-contrasena">
+            <small id="error-repite-contrasena" class="error-repite-contrasena" hidden>Introducir una contraseña correcta</small>
+            <small id="valido-repite-contrasena" class="valido-repite-contrasena" hidden>contraseña válida</small>
           </fieldset>
             
-                 
-          <input type="submit" value="Enviar" class="formulario-submit">
+
+          <input type="submit" id="btn-mandar" value="Enviar" class="btn-mandar">
 
         </form>
     </article>
     </section>
-    
+    <script src="app.js"></script>
     <footer>
       <p>Pata</p>
     </footer>
