@@ -15,39 +15,52 @@
     <section>
       <nav>
         <ul>
-          <li><a>Mercurio</a></li>
-          <li><a>Venus</a></li>
-          <li><a>Tierra</a></li>
-          <li><a>Marte</a></li>
-          <li><a>Júpiter</a></li>
-          <li><a>Saturno</a></li>
-          <li><a>Urano</a></li>
-          <li><a>Neptuno</a></li>
+          <li><a>Lunes</a></li>
+          <li><a>Martes</a></li>
+          <li><a>Miercoles</a></li>
+          <li><a>Jueves</a></li>
+          <li><a>Viernes</a></li>
+          <li><a>Sabado</a></li>
+          <li><a>Domingo</a></li>
         </ul>
       </nav>
       
       <article>
-        <h1>Login</h1>
+        <h1>Sing up</h1>
         <form action="" id ="formulario"  class="formulario">
-            <h1 class="formularioTitulo">Contactame</h1>
-
+          <fieldset>
+            <legend>Nombre completo</legend>
+            <label for="" class="formularioLabel ">Nombre</label>
             <small id="errorNombre" class="errorNombre" hidden>Introducir un Nombre correcto</small>
             <input type="text" name="" id="nombre" onblur="verificarNombre(this)" class="formularioInput">
-            <label for="" class="formularioLabel ">Nombres</label>
-
+            
+            <label for="" class="formularioLabel ">Apellido</label>
             <small id="errorApellido" class="errorApellido" hidden>Poner un Apellido correcto</small>
             <input type="text" name="" id="apellido" onblur="verificarApellido(this)" class="formularioInput">
-            <label for="" class="formularioLabel ">Apellido</label>
-            
+          </fieldset> 
+          <fieldset>
+            <legend>Correo:</legend>
+            <label for="" class="formularioLabel ">Email</label>
             <small id="errorCorreo" class="errorCorreo" hidden>Introducir un Correo correcto</small>
             <input type="text" name="" id="correo" onblur="verificarCorreo(this)" class="formularioInput">
-            <label for="" class="formularioLabel ">Correo</label>
             
+            <label for="" class="formularioLabel ">Repetir Email</label>
+            <small id="errorCorreo" class="errorCorreo" hidden>Introducir un Correo correcto</small>
+            <input type="text" name="" id="correo" onblur="verificarCorreo(this)" class="formularioInput">
+            </fieldset>
+          <fieldset>
+            <legend>Contraseña</legend>
+            <label for="" class="formularioLabel ">Contraseña</label>
             <small id="errorEdad" class="errorEdad" hidden>Introducir una Edad válida</small>
             <input type="text" name="" class="formularioInput" onblur="verificarEdad(this)" id="edad">
-            <label for="" class="formularioLabel ">Edad</label>
+
+            <label for="" class="formularioLabel ">Repetir Contraseña</label>
+            <small id="errorEdad" class="errorEdad" hidden>Introducir una Edad válida</small>
+            <input type="text" name="" class="formularioInput" id="edad">
+          </fieldset>
+            
                  
-            <input type="submit" value="Validar" class="formularioSubmit">
+          <input type="submit" value="Enviar" class="formulario-submit">
 
         </form>
     </article>
