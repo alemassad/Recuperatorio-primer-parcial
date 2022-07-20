@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+      <h2>Recuperatorio primer parcial</h2>
+    </header>
+    
+    <section>
+      <nav>
+        <ul>
+          <li><a>Mercurio</a></li>
+          <li><a>Venus</a></li>
+          <li><a>Tierra</a></li>
+          <li><a>Marte</a></li>
+          <li><a>Júpiter</a></li>
+          <li><a>Saturno</a></li>
+          <li><a>Urano</a></li>
+          <li><a>Neptuno</a></li>
+        </ul>
+      </nav>
+      
+      <article>
+        <h1>Login</h1>
+        <form action="" id ="formulario"  class="formulario">
+            <h1 class="formularioTitulo">Contactame</h1>
+
+            <small id="errorNombre" class="errorNombre" hidden>Introducir un Nombre correcto</small>
+            <input type="text" name="" id="nombre" onblur="verificarNombre(this)" class="formularioInput">
+            <label for="" class="formularioLabel ">Nombres</label>
+
+            <small id="errorApellido" class="errorApellido" hidden>Poner un Apellido correcto</small>
+            <input type="text" name="" id="apellido" onblur="verificarApellido(this)" class="formularioInput">
+            <label for="" class="formularioLabel ">Apellido</label>
+            
+            <small id="errorCorreo" class="errorCorreo" hidden>Introducir un Correo correcto</small>
+            <input type="text" name="" id="correo" onblur="verificarCorreo(this)" class="formularioInput">
+            <label for="" class="formularioLabel ">Correo</label>
+            
+            <small id="errorEdad" class="errorEdad" hidden>Introducir una Edad válida</small>
+            <input type="text" name="" class="formularioInput" onblur="verificarEdad(this)" id="edad">
+            <label for="" class="formularioLabel ">Edad</label>
+                 
+            <input type="submit" value="Validar" class="formularioSubmit">
+
+        </form>
+    </article>
+    </section>
+    
+    <footer>
+      <p>Pata</p>
+    </footer>
+    
+    </body>
+    
+</html>

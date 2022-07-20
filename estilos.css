@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;    
+}
+body{  
+    background-image: url(fondos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    margin: 0;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;;
+}
+header {
+    background-color: rgb(8, 42, 196,0.5);
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+nav {
+    float: left;
+    width: 100%;
+    height: 100%; 
+    background: rgb(11, 93, 131, 0.7);
+    padding: 5px;
+    color: white;
+}  
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}  
+article {
+    float: left;
+    padding: 20px;
+    width: 100%;    
+    height: 100%; 
+} 
+section::after {
+    content: "";
+    display: flex;
+    clear: both;
+}
+footer {
+    background-color: rgb(42, 7, 245, 0.7);
+    padding: 5px;
+    text-align: center;
+    color: white;    
+}
+.formulario, h1 {        
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    box-shadow: 0 0 20px 1px rgb(255, 246, 246);
+    position: relative;
+}
+.formularioTitulo{
+    text-align: center;
+    margin-top: 0;
+    color: rgba(0,0,0,0.7);
+}
+.formularioInput, .divSexo, .divPais, .formularioLabel, .divInteres
+    .formularioLabelMensaje, .formularioSubmit, .textareaInput{
+    display: block;
+    width: 100%;
+    font-size: 1.3em;    
+}
+.formularioInput, .textareaInput, .divSexo, .divPais, .divInteres{
+    padding: 10px;
+    border: 1px solid rgb(248, 242, 242);
+    margin-bottom: 40px;
+    background: rgba(94, 108, 160, 0.7);
+}
+
+.formularioLabel{
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -110px;    
+    color: rgb(245, 235, 148);
+    transition: all 0.2s;
+}
+.formularioLabelMensaje{
+    padding-left: 15px;
+    position: absolute;  
+    margin-top: -115px;  
+    z-index: -20;
+    color: rgba(0,0,0,0.5);
+    transition: all 0.2s;
+}
+.formularioSubmit{
+    background: rgba(3, 34, 49, 0.5);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+h3{
+    font-size: x-small;
+}
+@media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: auto;      
+    }
+}
