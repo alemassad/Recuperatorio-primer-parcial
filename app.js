@@ -2,14 +2,19 @@ window.onload=function(){
     formulario.reset();
         var form=document.getElementById("formulario")
         document.getElementById("input-nombre").focus();
-        
+        var contenedor =document.getElementById("contenedor");
+        var modal=document.getElementById("modal");
+        var btnCerrar=document.getElementById("cerrar");
+        var small=document.getElementsByTagNameNS("small");
+
         var passValido;
         var passRepiteValido;
         var correoValido;
         var correoRepiteValido;       
         var regexEmail= /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
 
-            form.addEventListener("submit", e =>{
+        form.addEventListener("submit", e =>{
+
             const nombre= document.getElementById("input-nombre").value;
             const apellido= document.getElementById("input-apellido").value;
             const inputPass =document.getElementById("input-contrasena").value;
@@ -24,8 +29,7 @@ window.onload=function(){
                 if(nombre.length<3||nombre.length==""){
                     document.getElementById("error-nombre").style.display ="block";
                     rojo("nombre");              
-                    console.log("ingrese un Nombre verdadero "+!isNaN(nombre));
-                    return false;        
+                   return false;        
                 }else if(!isNaN(nombre)){
                     document.getElementById("error-nombre").style.display ="block";
                     rojo("nombre");   
@@ -41,8 +45,7 @@ window.onload=function(){
                 if(apellido.length<3||apellido.length==""){
                     document.getElementById("error-apellido").style.display ="block";
                     rojo("apellido");              
-                    console.log("ingrese un Apellido valido "+(apellido));
-                    return false;        
+                     return false;        
                 }else if(!isNaN(apellido)){
                     document.getElementById("error-apellido").style.display ="block";
                     rojo("apellido");
@@ -55,16 +58,14 @@ window.onload=function(){
             }  
 
             function verificarCorreo(){                           
-                if(!regexEmail.test(inputMail)){
-                    alert("entrar un mail valido");
+                if(!regexEmail.test(inputMail)){                    
                     document.getElementById("error-correo").style.display ="block";
                     rojo("correo");
                 }else{
                     document.getElementById("valido-correo").style.display ="block";
-                    verde("correo");
-                    console.log("Email es ==> "+inputMail);
+                    verde("correo");                    
                     correoValido=inputMail.toString();
-                    console.log("Email"+correoValido);
+                    
                     return true;
                 }
             }
@@ -76,9 +77,8 @@ window.onload=function(){
                 }else{
                     document.getElementById("valido-repite-correo").style.display ="block";
                     verde("repite-correo");
-                    console.log("Email repetido es ==> "+inputRepiteMail);
                     correoRepiteValido=inputRepiteMail.toString();
-                    console.log("Email"+correoRepiteValido);
+                    
                     return true;
                 }
             }          
@@ -91,9 +91,9 @@ window.onload=function(){
                 }else {
                     document.getElementById("valido-contrasena").style.display ="block";
                     verde("contrasena");
-                    console.log(inputPass);
+                    
                     passValido=inputPass.toString();   
-                    console.log(passValido);
+                    
                     return true;
                 } 
             }  
@@ -112,24 +112,43 @@ window.onload=function(){
 
             if ( verificarPass() && verificarRepitePass()
                 && verificarCorreo()&& verificarRepiteCorreo()
-                && verificarNombre()&& verificarApellido()){
-               console.log("verificacion TRUE"); 
+                && verificarNombre()&& verificarApellido()
+                &&comparaCorreo() && comparaPass() ){
+                
+                modal.style.visibility= "visible";
+                
 
             }
-            if (correoValido != correoRepiteValido) {
-                console.log("los correos no coinciden");
-                document.getElementById("error-repite-correo").style.display ="block";
-                rojo("repite-correo");
-                document.getElementById("input-repite-correo").focus();
-            }                
-            if (passValido != passRepiteValido) {
-                console.log("las contraseñas no coinciden");                    
-                document.getElementById("error-repite-contrasena").style.display ="block";
-                rojo("repite-contrasena"); 
-                document.getElementById("input-repite-contrasena").focus();
+            btnCerrar.onclick =function(){                 
+                modal.style.visibility="hidden";
+                formulario.reset();
+                small.reset();
+            } 
+            
+            function comparaCorreo() {
+                if (correoValido != correoRepiteValido) {                
+                    document.getElementById("error-repite-correo").style.display ="block";
+                    rojo("repite-correo");
+                    document.getElementById("input-repite-correo").focus();
+                    return false;
+                }else {
+                    return true;
+                }                
             }
+
+            function comparaPass() {
+                if (passValido != passRepiteValido) {                                    
+                    document.getElementById("error-repite-contrasena").style.display ="block";
+                    rojo("repite-contrasena"); 
+                    document.getElementById("input-repite-contrasena").focus();
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+            
         })
-
+        
         function rojo(e){
             document.getElementById("input-"+e).style.background = "rgb(255, 4, 2, 0.5)";
             document.getElementById("valido-"+e).style.display ="none";
@@ -138,4 +157,4 @@ window.onload=function(){
             document.getElementById("input-"+e).style.background = "rgb(157, 230, 188, 0.7)";
             document.getElementById("error-"+e).style.display="none";
         }
-    }
+}
