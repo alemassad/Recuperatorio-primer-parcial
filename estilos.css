@@ -51,12 +51,12 @@ h1, legend {
     text-align: center;    
 }
 .formulario, h1 {        
-    width: 500px;
+    width: 500px;   
     max-width: 100%;
     margin: auto;
     margin-top: 10px;
     padding: 5px;
-    box-shadow: 0 0 20px 1px rgb(255, 246, 246);
+    box-shadow: 0 0 20px 1px rgb(17, 9, 9);
     position: relative;
 }
 .valido-nombre, .valido-apellido, .valido-correo,.valido-repite-correo,
@@ -65,7 +65,7 @@ h1, legend {
     color: rgb(13, 224, 13);
 }
 .error-nombre, .error-apellido, .error-correo, .error-contrasena,
-.error-repite-contrasena, .error-repite-contrasena{
+.error-repite-correo, .error-repite-contrasena{
     color: rgb(206, 8, 8);
     margin-top: -10px;
 }

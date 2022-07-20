@@ -6,9 +6,7 @@ window.onload=function(){
         var passValido;
         var passRepiteValido;
         var correoValido;
-        var correoRepiteValido;
-        var nombreValido;
-        var apellidoValido;
+        var correoRepiteValido;       
         var regexEmail= /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
 
             form.addEventListener("submit", e =>{
@@ -35,11 +33,10 @@ window.onload=function(){
                 }else{
                     document.getElementById("valido-nombre").style.display ="block";
                     verde("nombre");
-                    nombreValido=nombre.toString();   
                     return true;                                      
                 } 
             }  
-              
+
             function verificarApellido(){                
                 if(apellido.length<3||apellido.length==""){
                     document.getElementById("error-apellido").style.display ="block";
@@ -52,8 +49,7 @@ window.onload=function(){
                     return false;        
                 }else{
                     document.getElementById("valido-apellido").style.display ="block";
-                    verde("apellido");
-                    apellidoValido=apellido.toString();   
+                    verde("apellido");                     
                     return true;                                                    
                 } 
             }  
@@ -68,6 +64,7 @@ window.onload=function(){
                     verde("correo");
                     console.log("Email es ==> "+inputMail);
                     correoValido=inputMail.toString();
+                    console.log("Email"+correoValido);
                     return true;
                 }
             }
@@ -81,52 +78,56 @@ window.onload=function(){
                     verde("repite-correo");
                     console.log("Email repetido es ==> "+inputRepiteMail);
                     correoRepiteValido=inputRepiteMail.toString();
+                    console.log("Email"+correoRepiteValido);
                     return true;
                 }
-            }
+            }          
 
             function verificarPass(){
-                if(inputPass.length<6||inputPass.length==""){
+                if(inputPass.length<7||inputPass.length=="") {
                     document.getElementById("error-contrasena").style.display ="block";
                     rojo("contrasena"); 
                     return false;        
-                }else if(!isNaN(inputPass)){
-                    document.getElementById("error-contrasena").style.display ="block";
-                    rojo("error-contrasena");   
-                    return false;     
-                }else{
+                }else {
                     document.getElementById("valido-contrasena").style.display ="block";
                     verde("contrasena");
+                    console.log(inputPass);
                     passValido=inputPass.toString();   
+                    console.log(passValido);
                     return true;
                 } 
             }  
             function verificarRepitePass(){
-                if(inputRepitePass.length<6||inputRepitePass.length==""){
+                if(inputRepitePass.length<7||inputRepitePass.length=="") {
                     document.getElementById("error-repite-contrasena").style.display ="block";
                     rojo("repite-contrasena"); 
                     return false;        
-                }else if(!isNaN(inputRepitePass)){
-                    document.getElementById("error-repite-contrasena").style.display ="block";
-                    rojo("repite-contrasena");   
-                    return false;     
-                }else{
+                }else {
                     document.getElementById("valido-repite-contrasena").style.display ="block";
-                    verde("repite-contrasena");
+                    verde("repite-contrasena");                    
                     passRepiteValido=inputRepitePass.toString();   
                     return true;
                 } 
             }  
 
-
             if ( verificarPass() && verificarRepitePass()
                 && verificarCorreo()&& verificarRepiteCorreo()
                 && verificarNombre()&& verificarApellido()){
-               console.log("verificacion TRUE");  
-        
-            }else{
-                e.preventDefault();
-            }        
+               console.log("verificacion TRUE"); 
+
+            }
+            if (correoValido != correoRepiteValido) {
+                console.log("los correos no coinciden");
+                document.getElementById("error-repite-correo").style.display ="block";
+                rojo("repite-correo");
+                document.getElementById("input-repite-correo").focus();
+            }                
+            if (passValido != passRepiteValido) {
+                console.log("las contraseñas no coinciden");                    
+                document.getElementById("error-repite-contrasena").style.display ="block";
+                rojo("repite-contrasena"); 
+                document.getElementById("input-repite-contrasena").focus();
+            }
         })
 
         function rojo(e){
