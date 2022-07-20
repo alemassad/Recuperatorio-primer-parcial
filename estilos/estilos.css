@@ -2,7 +2,7 @@
     box-sizing: border-box;    
 }
 body{  
-    background-image: url(fondos1.jpg);
+    background-image: url(../imag/fondoMar.jpg);
     background-repeat: no-repeat;
     background-size: cover;  
     margin: 0;

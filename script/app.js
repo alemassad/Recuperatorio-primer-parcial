@@ -5,7 +5,7 @@ window.onload=function(){
         var contenedor =document.getElementById("contenedor");
         var modal=document.getElementById("modal");
         var btnCerrar=document.getElementById("cerrar");
-        var small=document.getElementsByTagNameNS("small");
+        
 
         var passValido;
         var passRepiteValido;
@@ -119,10 +119,9 @@ window.onload=function(){
                 
 
             }
-            btnCerrar.onclick =function(){                 
-                modal.style.visibility="hidden";
-                formulario.reset();
-                small.reset();
+            
+            btnCerrar.onclick =function(){                                 
+                location.href="index.html";                
             } 
             
             function comparaCorreo() {
