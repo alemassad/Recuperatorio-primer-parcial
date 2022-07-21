@@ -166,14 +166,15 @@ button:hover {
     nav{
         background: rgb(79, 42, 165);
         flex-direction: column;
+        height: 100%;
+        
     }
     .menu-bar{
         margin-left: 25px;
         text-align: center;
         background: rgb(206, 67, 114);  
         margin-top: 2px;  
-        border: solid 1px #fff; 
-        z-index: 3;           
+        border: solid 1px #fff;                  
     }    
     .menu-boton{
         display: inline-block;
@@ -183,6 +184,9 @@ button:hover {
     }
     .ocultar{
         display: none;
-    }    
+    }   
+    header{
+        display: none;
+    } 
 
 }
