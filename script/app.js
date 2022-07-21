@@ -149,13 +149,14 @@ window.onload=function(){
         })        
         btnMenu.onclick=function() {            
             var ancla = document.getElementsByClassName("menu-bar");
-            for (var i = 0; i < ancla.length; i++){
+            for (var i = 0; i < 6; i++){
                 ancla[i].classList.toggle("ocultar");
             }
         }
         function rojo(e){
             document.getElementById("input-"+e).style.background = "rgb(255, 4, 2, 0.5)";
             document.getElementById("valido-"+e).style.display ="none";
+            document.getElementById("input-"+e).focus();
         }
         function verde(e){
             document.getElementById("input-"+e).style.background = "rgb(157, 230, 188, 0.7)";

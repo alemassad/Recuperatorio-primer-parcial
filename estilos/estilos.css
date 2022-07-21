@@ -132,14 +132,11 @@ button:hover {
     background-color: rgb(45, 41, 240);
 }
 .menu-bar {
+    width: 90%;
     display: inline-block;
     color: white;
     padding: 20px, 30px;
     text-decoration: none;
-}
-.menu-bar{
-    margin: 5px, 10px; 
-           
 }
 .menu-bar:hover{
     background: rgb(173, 114, 250);
@@ -161,21 +158,31 @@ button:hover {
       width: 100%;
       height: auto;          
     }
+    h1{
+        font-size: medium;
+        color: rgb(192, 241, 12, 0.7);
+        align-items: flex-end;
+    }
     nav{
         background: rgb(79, 42, 165);
         flex-direction: column;
     }
     .menu-bar{
-        margin: 5px, 10px; 
-               
-    }
+        margin-left: 25px;
+        text-align: center;
+        background: rgb(206, 67, 114);  
+        margin-top: 2px;  
+        border: solid 1px #fff; 
+        z-index: 3;           
+    }    
     .menu-boton{
         display: inline-block;
         align-items: center;
         z-index: 1;
         background: rgba(68, 185, 185);
     }
-    .ocultar {
+    .ocultar{
         display: none;
     }    
+
 }
