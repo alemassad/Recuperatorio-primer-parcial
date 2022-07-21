@@ -5,6 +5,7 @@ window.onload=function(){
         var contenedor =document.getElementById("contenedor");
         var modal=document.getElementById("modal");
         var btnCerrar=document.getElementById("cerrar");
+        var btnMenu=document.getElementById("menu-boton");
         
 
         var passValido;
@@ -114,9 +115,8 @@ window.onload=function(){
                 && verificarCorreo()&& verificarRepiteCorreo()
                 && verificarNombre()&& verificarApellido()
                 &&comparaCorreo() && comparaPass() ){
-                
-                modal.style.visibility= "visible";
-                
+                contenedor.style.visibility="visible";
+                modal.style.visibility= "visible";               
 
             }
             
@@ -146,8 +146,13 @@ window.onload=function(){
                 }
             }
             
-        })
-        
+        })        
+        btnMenu.onclick=function() {            
+            var ancla = document.getElementsByClassName("menu-bar");
+            for (var i = 0; i < ancla.length; i++){
+                ancla[i].classList.toggle("ocultar");
+            }
+        }
         function rojo(e){
             document.getElementById("input-"+e).style.background = "rgb(255, 4, 2, 0.5)";
             document.getElementById("valido-"+e).style.display ="none";
